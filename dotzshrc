@@ -1,0 +1,17 @@
+export PATH="/opt/homebrew/opt/curl/bin:$HOME/.cargo/bin:$HOME/perl5/bin:$PATH"
+export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
+export PICO_SDK_PATH=/Users/ure/Git/pico-sdk
+alias ls="exa -bhlmu"
+
+transfer() {
+    curl --progress-bar --upload-file "$1" https://transfer.rf.guru/"$1"
+}
+pb() {
+    nc pb.rf.guru 9999
+}
+
+# Only load Liquidprompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
