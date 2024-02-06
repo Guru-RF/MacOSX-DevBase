@@ -1,7 +1,9 @@
-export PATH="/opt/homebrew/opt/curl/bin:$HOME/.cargo/bin:$HOME/perl5/bin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:/usr/local/bin:/opt/homebrew/opt/curl/bin:$HOME/.cargo/bin:$HOME/perl5/bin:$PATH"
 export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
 export PICO_SDK_PATH=/Users/ure/Git/pico-sdk
 alias ls="exa -bhlmu"
+alias mtr="sudo mtr --curses --show-ips --tcp --mpls -z"
+alias pip="pip3"
 
 transfer() {
     curl --progress-bar --upload-file "$1" https://transfer.rf.guru/"$1"
