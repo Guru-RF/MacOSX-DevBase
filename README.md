@@ -4,7 +4,7 @@ install python3
 
 install brew
 
-install liquidprompt (powerline_full theme)
+install liquidprompt (powerline_full theme) git clone https://github.com/nojhan/liquidprompt.git ~/liquidprompt
 
 install python3 (via python installer has TK)
 
