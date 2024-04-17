@@ -1,9 +1,11 @@
-export PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:/usr/local/bin:/opt/homebrew/opt/curl/bin:$HOME/.cargo/bin:$HOME/perl5/bin:$PATH"
-export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
+export PATH="$HOME/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/bin:/opt/homebrew/opt/curl/bin:$HOME/.cargo/bin:$HOME/perl5/bin:$PATH:$HOME/.platformio/penv/bin"
+#export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
 export PICO_SDK_PATH=/Users/ure/Git/pico-sdk
 alias ls="exa -bhlmu"
 alias mtr="sudo mtr --curses --show-ips --tcp --mpls -z"
 alias pip="pip3"
+alias shuf="gshuf"
+alias cat="bat"
 
 transfer() {
     curl --progress-bar --upload-file "$1" https://transfer.rf.guru/"$1"
@@ -17,3 +19,11 @@ pb() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ure/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ure/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ure/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ure/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(zoxide init --cmd cd --hook pwd zsh)"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
