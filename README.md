@@ -1,3 +1,10 @@
+install vcode
+install platformio in vscode
+
+install iterm2
+make iterm default term
+install iterm integrations
+
 <https://www.python.org/downloads/>>
 
 install python3.11.9 (not 12!!!! it brakes ansible)
