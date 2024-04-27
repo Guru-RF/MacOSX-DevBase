@@ -62,3 +62,7 @@ wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli
 (in user root and install ./google-cloud-sdk/install.sh)
 exec zsh
 gcloud components update
+
+brew install tmux
+
+
