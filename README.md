@@ -10,9 +10,19 @@ install iterm integrations
 install python3.11.9 (not 12!!!! it brakes ansible)
 install certs and shell check
 
-install brew
+install brew (https://brew.sh/)
 
 install liquidprompt via git (powerline_full theme)
+
+add to zshrc 
+# Only load Liquidprompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+[[ $- = *i* ]] && source ~/liquidprompt/themes/powerline/powerline.theme
+[[ $- = *i* ]] && lp_theme powerline
+
+install powerline fonts in Git dir (mkdir ~Git/) git clone https://github.com/powerline/fonts.git --depth=1 && cd fonts && ./install.sh
+in iterm2 change font to Meslo LG M DZ for Powerline, Regular, 14px!
+check if vscode terminal also has the powerline fonts ...
 
 brew update
 
