@@ -8,6 +8,7 @@ install iterm integrations
 <https://www.python.org/downloads/>>
 
 install python3.11.9 (not 12!!!! it brakes ansible)
+install certs and shell check
 
 install brew
 
