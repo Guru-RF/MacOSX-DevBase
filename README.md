@@ -56,5 +56,7 @@ brew install zoxide
 
 brew install entr
 
+brew install wget
+
 wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-462.0.1-darwin-arm.tar.gz
 (in user root and install ./google-cloud-sdk/install.sh)
