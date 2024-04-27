@@ -22,6 +22,8 @@ add to zshrc
 
 install powerline fonts in Git dir (mkdir ~Git/) git clone https://github.com/powerline/fonts.git --depth=1 && cd fonts && ./install.sh
 in iterm2 change font to Meslo LG M DZ for Powerline, Regular, 14px!
+change colors to solarized dark in iterm2
+
 check if vscode terminal also has the powerline fonts ...
 
 brew update
@@ -31,6 +33,8 @@ brew upgrade
 brew install fzf
 
 $(brew --prefix)/opt/fzf/install
+
+exec zsh
 
 brew install rust
 
@@ -52,4 +56,5 @@ brew install zoxide
 
 brew install entr
 
-wget <https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-462.0.1-darwin-arm.tar.gz> (in user root and install ./google-cloud-sdk/install.sh)
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-462.0.1-darwin-arm.tar.gz
+(in user root and install ./google-cloud-sdk/install.sh)
