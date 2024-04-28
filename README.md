@@ -47,8 +47,6 @@ brew install rust
 
 cargo install exa
 
-brew install cpanm
-
 pip3 install ansible-core==2.11.6
 
 brew install cowsay
