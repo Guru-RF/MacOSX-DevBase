@@ -67,6 +67,7 @@ wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli
 (in user root and install ./google-cloud-sdk/install.sh)
 exec zsh
 gcloud components update
+gcloud auth login
 
 brew install tmux
 
@@ -77,8 +78,10 @@ cpanm JSON::XS
 cpanm Mojolicious
 perl -i -pe 's/\/usr\/bin\/perl/\/usr\/bin\/env perl/g' ~/perl5/bin/*
 cpanm Mojo::Redis
+
 cpanm Mojolicious::Plugin::Sentry
 cpanm Config::YAML
 
+cpanm File::JSON::Slurper
 
 
