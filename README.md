@@ -69,18 +69,15 @@ gcloud auth login
 
 brew install tmux
 
+# perl stuff
 cpan App::cpanminus
 exec zsh
-
-# perl stuff
 cpanm JSON::XS
 cpanm Mojolicious
 perl -i -pe 's/\/usr\/bin\/perl/\/usr\/bin\/env perl/g' ~/perl5/bin/*
 cpanm Mojo::Redis
-
 cpanm Mojolicious::Plugin::Sentry
 cpanm Config::YAML
-
 cpanm File::JSON::Slurper
 
 # ansible stuff
@@ -95,12 +92,8 @@ brew install mtr
 install wireguard (use ip's from wp-voice-ansible)
 login via glcoud ssh to one machine in each project
 
-#procs
-brew install htop
 #diskutil
 brew install ncdu
-#youtube
-brew install yt-dlp
 # downloader
 brew install aria2
 # calc
@@ -116,6 +109,17 @@ brew install neofetch
 brew install glow
 # ftp/webdav etc
 brew install duck
+# top replacement
+brew install bpytop\
+# find replacement
+brew install fd
+# tmate (remote terminal helper)
+brew install tmate
+# lazygit (tui)
+brew install lazygit
+# video downloader *youtube etc
+brew install lux
+
 
 
 
