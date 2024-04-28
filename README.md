@@ -71,6 +71,7 @@ gcloud components update
 brew install tmux
 
 cpan App::cpanminus
+exec zsh
 
 cpanm install JSON::XS
 cpanm install Mojolicious
