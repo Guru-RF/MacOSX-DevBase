@@ -70,6 +70,8 @@ gcloud components update
 
 brew install tmux
 
+cpan App::cpanminus
+
 cpanm install JSON::XS
 cpanm install Mojolicious
 perl -i -pe 's/\/usr\/bin\/perl/\/usr\/bin\/env perl/g' ~/perl5/bin/*
