@@ -47,8 +47,6 @@ brew install rust
 
 cargo install exa
 
-pip3 install ansible-core==2.11.6
-
 brew install cowsay
 
 brew install coreutils
@@ -74,6 +72,7 @@ brew install tmux
 cpan App::cpanminus
 exec zsh
 
+# perl stuff
 cpanm JSON::XS
 cpanm Mojolicious
 perl -i -pe 's/\/usr\/bin\/perl/\/usr\/bin\/env perl/g' ~/perl5/bin/*
@@ -84,14 +83,41 @@ cpanm Config::YAML
 
 cpanm File::JSON::Slurper
 
+# ansible stuff
+pip3 install ansible-core==2.11.6
 pip3 google-auth
 pip3 install requests
 ansible-galaxy collection install google.cloud:1.2.0
 
+# tracerts
 brew install mtr
 
 install wireguard (use ip's from wp-voice-ansible)
 login via glcoud ssh to one machine in each project
+
+#procs
+brew install htop
+#diskutil
+brew install ncdu
+#youtube
+brew install yt-dlp
+# downloader
+brew install aria2
+# calc
+brew install insect
+# mysql cli
+brew install mycli
+# postgresql
+brew tap dbcli/tap
+brew install pgcli
+# cpuinfo
+brew install neofetch
+# mark down reader
+brew install glow
+# ftp/webdav etc
+brew install duck
+
+
 
 
 
