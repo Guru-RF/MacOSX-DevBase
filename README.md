@@ -1,3 +1,8 @@
+git config --global user.name "First Last" (uw naam invulle)
+git config --global user.email "ikke@mijndomain.com"
+
+nieuwe git ... gebruik git fetch; git merge idpv git pull (of zet rebase merge)
+
 install vcode
 install platformio in vscode
 
@@ -21,7 +26,7 @@ add to zshrc
 [[ $- = *i* ]] && lp_theme powerline
 
 install powerline fonts in Git dir (mkdir ~Git/) git clone https://github.com/powerline/fonts.git --depth=1 && cd fonts && ./install.sh
-in iterm2 change font to Meslo LG M DZ for Powerline, Regular, 14px!
+in iterm2 change font to Roboto Mono for Powerline, Regular, 17px!
 change colors to solarized dark in iterm2
 
 check if vscode terminal also has the powerline fonts ...
