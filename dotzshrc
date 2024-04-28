@@ -1,21 +1,9 @@
-export PATH="$HOME/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/bin:/opt/homebrew/opt/curl/bin:$HOME/.cargo/bin:$HOME/perl5/bin:$PATH:$HOME/.platformio/penv/bin"
-#export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
-export PICO_SDK_PATH=/Users/ure/Git/pico-sdk
-alias ls="exa -bhlmu"
-alias mtr="sudo mtr --curses --show-ips --tcp --mpls -z"
-alias pip="pip3"
-alias shuf="gshuf"
-alias cat="bat"
-
-transfer() {
-    curl --progress-bar --upload-file "$1" https://transfer.rf.guru/"$1"
-}
-pb() {
-    nc pb.rf.guru 9999
-}
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Only load Liquidprompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+[[ $- = *i* ]] && source ~/liquidprompt/themes/powerline/powerline.theme
+[[ $- = *i* ]] && lp_theme powerline
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -25,5 +13,30 @@ if [ -f '/Users/ure/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ure/google-
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ure/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ure/google-cloud-sdk/completion.zsh.inc'; fi
 
+export PATH=${HOME}/perl5/bin:${PATH}
+
+PATH="/Users/ure/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/ure/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/ure/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/ure/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/ure/perl5"; export PERL_MM_OPT;
+
+alias ls="exa -bhlmu"
+alias mtr="sudo mtr --curses --show-ips --tcp --mpls -z"
+alias pip="pip3"
+alias shuf="gshuf"
+alias cat="bat"
+alias top="bpytop"
+alias htop="bpytop"
+alias find="fd"
+
+transfer() {
+    curl --progress-bar --upload-file "$1" https://transfer.rf.guru/"$1"
+}
+pb() {
+    nc pb.rf.guru 9999
+}
+
+export PATH="${HOME}/.cargo/bin:${PATH}"
 eval "$(zoxide init --cmd cd --hook pwd zsh)"
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:${PATH}"
