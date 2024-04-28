@@ -84,4 +84,8 @@ cpanm Config::YAML
 
 cpanm File::JSON::Slurper
 
+pip3 google-auth
+ansible-galaxy collection install google.cloud
+
+
 
