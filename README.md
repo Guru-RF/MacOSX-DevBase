@@ -5,6 +5,7 @@ nieuwe git ... gebruik git fetch; git merge idpv git pull (of zet rebase merge)
 
 install vcode
 install platformio in vscode
+install https://karabiner-elements.pqrs.org/ (map shift-ESC to tilde)
 
 install iterm2
 make iterm default term
