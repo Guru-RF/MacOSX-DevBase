@@ -73,8 +73,12 @@ brew install tmux
 cpan App::cpanminus
 exec zsh
 
-cpanm install JSON::XS
-cpanm install Mojolicious
+cpanm JSON::XS
+cpanm Mojolicious
 perl -i -pe 's/\/usr\/bin\/perl/\/usr\/bin\/env perl/g' ~/perl5/bin/*
+cpanm Mojo::Redis
+cpanm Mojolicious::Plugin::Sentry
+cpanm Config::YAML
+
 
 
