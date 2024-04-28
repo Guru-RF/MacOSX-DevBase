@@ -90,5 +90,10 @@ ansible-galaxy collection install google.cloud:1.2.0
 
 brew install mtr
 
+install wireguard (use ip's from wp-voice-ansible)
+login via glcoud ssh to one machine in each project
+
+
+
 
 
