@@ -119,6 +119,8 @@ brew install tmate
 brew install lazygit
 # video downloader *youtube etc
 brew install lux
+# terminal notifier
+brew install terminal-notifier
 
 
 
