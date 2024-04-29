@@ -43,7 +43,8 @@ $(brew --prefix)/opt/fzf/install
 
 exec zsh
 
-brew install rust
+brew install rustup
+rustup-init
 
 cargo install exa
 
