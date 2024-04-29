@@ -128,6 +128,10 @@ brew install terminal-notifier
 brew install neovim
 pip3 install pynvim
 sh -c "$(wget -O- https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
+# redis (local redis for testing)
+brew install redis
+brew services start redis
+
 
 
 
