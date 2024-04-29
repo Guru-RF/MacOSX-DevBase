@@ -68,6 +68,8 @@ gcloud components update
 gcloud auth login
 
 brew install tmux
+brew install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # perl stuff
 cpan App::cpanminus
