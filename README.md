@@ -126,6 +126,7 @@ brew install terminal-notifier
 # neovim
 brew install neovim
 pip3 install pynvim
+sh -c "$(wget -O- https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 
 
 
