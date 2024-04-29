@@ -123,6 +123,8 @@ brew install lazygit
 brew install lux
 # terminal notifier
 brew install terminal-notifier
+# neovim
+brew install neovim
 
 
 
