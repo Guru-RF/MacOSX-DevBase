@@ -125,6 +125,7 @@ brew install lux
 brew install terminal-notifier
 # neovim
 brew install neovim
+pip3 install pynvim
 
 
 
