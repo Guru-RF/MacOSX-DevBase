@@ -131,6 +131,11 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/Shougo/dein-installer.vim/ma
 # redis (local redis for testing)
 brew install redis
 brew services start redis
+# perl Carton
+cpanm Carton
+cpanm App::cpanoutdated
+cpanm -f Perl::PrereqScanner::Lite
+cpanm App::scan_prereqs_cpanfile
 
 
 
