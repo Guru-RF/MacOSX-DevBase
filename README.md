@@ -141,7 +141,9 @@ brew install dust
 # cheat (verkorte manual van commando's handig voor u jo)
 brew install cheat
 # terminal recorder
-npm isntall -g svg-term-cli
+npm i -D git+https://github.com/miraclx/svgembed svg-term-cli
+#npx svg-term-cli --cast=92UaraAB1LOZR13laURQ5jB7b --out tmp.svg --window
+#npx svgembed -i tmp.svg -o demo.svg -f CascadiaMonoPL.ttf
 
 
 
