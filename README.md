@@ -140,6 +140,8 @@ cpanm App::scan_prereqs_cpanfile
 brew install dust
 # cheat (verkorte manual van commando's handig voor u jo)
 brew install cheat
+# terminal recorder
+npm isntall -g svg-term-cli
 
 
 
