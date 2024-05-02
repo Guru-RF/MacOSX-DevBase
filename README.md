@@ -136,6 +136,10 @@ cpanm Carton
 cpanm App::cpanoutdated
 cpanm -f Perl::PrereqScanner::Lite
 cpanm App::scan_prereqs_cpanfile
+# dust
+brew install dust
+# cheat (verkorte manual van commando's handig voor u jo)
+brew install cheat
 
 
 
