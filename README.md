@@ -85,7 +85,7 @@ cpanm File::JSON::Slurper
 
 # ansible stuff
 pip3 install ansible-core==2.11.6
-pip3 google-auth
+pip3 install google-auth
 pip3 install requests
 ansible-galaxy collection install google.cloud:1.2.0
 
@@ -113,7 +113,7 @@ brew install glow
 # ftp/webdav etc
 brew install duck
 # top replacement
-brew install bpytop\
+brew install bpytop
 # find replacement
 brew install fd
 # tmate (remote terminal helper)
@@ -122,6 +122,7 @@ brew install tmate
 brew install lazygit
 # video downloader *youtube etc
 brew install lux
+
 # terminal notifier
 brew install terminal-notifier
 # neovim
