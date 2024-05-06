@@ -148,6 +148,8 @@ npm --global i -D git+https://github.com/miraclx/svgembed svg-term-cli
 brew install zsh-autocomplete
 # httpie
 brew install httpie
+# zsh completions
+brew install zsh-completions
 
 
 
