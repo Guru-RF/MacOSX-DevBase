@@ -150,6 +150,8 @@ brew install zsh-autocomplete
 brew install httpie
 # zsh completions
 brew install zsh-completions
+# kubectl tools goole
+gcloud components install kubectl
 
 
 
