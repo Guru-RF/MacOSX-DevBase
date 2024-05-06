@@ -144,6 +144,10 @@ brew install cheat
 # terminal recorder
 brew install asciinema
 npm --global i -D git+https://github.com/miraclx/svgembed svg-term-cli
+# zsh autocomplete
+brew install zsh-autocomplete
+# httpie
+brew install httpie
 
 
 
