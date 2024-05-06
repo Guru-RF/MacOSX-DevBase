@@ -1,3 +1,7 @@
+# Setting PATH for Python 3.11
+PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
+export PATH
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Only load Liquidprompt in interactive shells, not from a script or from scp
@@ -52,3 +56,12 @@ export PATH="${HOME}/bin:${PATH}"
 
 export LDFLAGS="-L$(brew --prefix openssl)/lib"
 export CPPFLAGS="-I$(brew --prefix openssl)/include"
+
+source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:${HOME}/.zsh_completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
