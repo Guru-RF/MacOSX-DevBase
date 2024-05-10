@@ -13,24 +13,24 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 eval "$(fzf --zsh)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ure/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ure/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "${HOME}/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/ure/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ure/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "${HOME}/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/completion.zsh.inc"; fi
 
 export PATH=${HOME}/perl5/bin:${PATH}
 
-PATH="/Users/ure/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/ure/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/ure/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/ure/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/ure/perl5"; export PERL_MM_OPT;
+PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="${HOME}/perl5/lib/perl5"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
 
 alias ls="exa -bhlmu"
 alias mtr="sudo mtr --curses --show-ips --tcp --mpls -z"
 alias pip="pip3"
 alias shuf="gshuf"
-alias cat="bat"
+alias less="bat"
 alias top="bpytop"
 alias htop="bpytop"
 alias find="fd"
@@ -57,7 +57,8 @@ export PATH="${HOME}/bin:${PATH}"
 export LDFLAGS="-L$(brew --prefix openssl)/lib"
 export CPPFLAGS="-I$(brew --prefix openssl)/include"
 
-source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# can be handy for jonathan
+#source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:${HOME}/.zsh_completions:$FPATH
