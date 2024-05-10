@@ -1,0 +1,40 @@
+#!/bin/bash
+
+cd ..
+app=$(basename $(pwd -P))
+cd - > /dev/null
+
+cd ../..
+namespace=$(basename $(pwd -P))
+cd - > /dev/null
+
+echo "Checking for perl"
+if grep -q perl * 2> /dev/null; then
+  echo "  FOUND perl magic !"
+else
+  echo "No Perl found ... exiting."
+  exit
+fi
+
+echo "Removing old cpanfile"
+rm -f cpanfile cpanfile.snapshot
+
+echo "Updating local modules"
+cpan-outdated | cpanm --notest
+
+echo "Preparing for carton"
+echo local/ > .gitignore
+echo app/local/ > ../.gcloudignore
+rm -fr local/
+
+echo "Scanning for prerequisites"
+scan-prereqs-cpanfile > cpanfile
+
+echo "Carton install"
+carton install
+
+echo "Updating git"
+git add cpanfile cpanfile.snapshot .gitignore
+
+echo "Git commit"
+git commit -m "cartonize ${namespace}/${app}"
