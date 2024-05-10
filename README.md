@@ -153,6 +153,15 @@ brew install zsh-completions
 # kubectl tools goole
 gcloud components install kubectl
 
+# LanguageServer
+cpanm -f AnyEvent
+cpanm  AnyEvent::AIO
+cpanm Coro
+cpanm Class::Refresh
+cpanm Compiler::Lexer
+cpanm Hash::SafeKeys
+cpanm Perl::LanguageServer
+
 
 
 
