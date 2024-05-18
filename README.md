@@ -72,16 +72,7 @@ brew install tmux
 brew install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# perl stuff
-cpan App::cpanminus
-exec zsh
-cpanm JSON::XS
-cpanm Mojolicious
-perl -i -pe 's/\/usr\/bin\/perl/\/usr\/bin\/env perl/g' ~/perl5/bin/*
-cpanm Mojo::Redis
-cpanm Mojolicious::Plugin::Sentry
-cpanm Config::YAML
-cpanm File::JSON::Slurper
+
 
 # ansible stuff
 pip3 install ansible-core==2.11.6
@@ -132,11 +123,7 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/Shougo/dein-installer.vim/ma
 # redis (local redis for testing)
 brew install redis
 brew services start redis
-# perl Carton
-cpanm Carton
-cpanm App::cpanoutdated
-cpanm -f Perl::PrereqScanner::Lite
-cpanm App::scan_prereqs_cpanfile
+
 # dust
 brew install dust
 # cheat (verkorte manual van commando's handig voor u jo)
@@ -153,7 +140,24 @@ brew install zsh-completions
 # kubectl tools goole
 gcloud components install kubectl
 
-# LanguageServer
+# Perl
+(install latest .zshrc)
+rm -fr ~/perl5
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5" cpan local::lib
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+brew install perl
+curl -L https://cpanmin.us | perl - App::cpanminus
+cpanm App::cpanoutdated
+cpan-outdated | cpanm --notest
+cpanm JSON::XS
+cpanm Mojolicious
+cpanm Mojo::Redis
+cpanm Mojolicious::Plugin::Sentry
+cpanm Config::YAML
+cpanm Carton
+cpanm -f Perl::PrereqScanner::Lite
+cpanm App::scan_prereqs_cpanfile
+cpanm File::JSON::Slurper
 cpanm -f AnyEvent
 cpanm  AnyEvent::AIO
 cpanm Coro
