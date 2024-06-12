@@ -166,7 +166,10 @@ cpanm Compiler::Lexer
 cpanm Hash::SafeKeys
 cpanm Perl::LanguageServer
 
+echo ".DS_Store" > ~/.gitignore
+echo ".vscode" > ~/.gitignore
 
+git config --global core.excludesFile '~/.gitignore'
 
 
 
