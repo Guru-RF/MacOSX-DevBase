@@ -171,6 +171,9 @@ echo ".vscode" > ~/.gitignore
 
 git config --global core.excludesFile '~/.gitignore'
 
+brew install --cask macfuse
+
+
 
 
 
