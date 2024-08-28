@@ -78,7 +78,17 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 pip3 install ansible-core==2.11.6
 pip3 install google-auth
 pip3 install requests
+pip3 install apache_libcloud==3.3.1
+
+# ansible config file in user root directory
+create file ~/.ansible.cfg
+[galaxy]
+server = https://old-galaxy.ansible.com/
+
+#assible galaxu collections install
 ansible-galaxy collection install google.cloud:1.2.0
+ansible-galaxy collection install community.google:1.0.0
+ansible-galaxy collection install community.general:3.8.1
 
 # tracerts
 brew install mtr
