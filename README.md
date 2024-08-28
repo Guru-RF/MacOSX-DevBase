@@ -86,9 +86,10 @@ create file ~/.ansible.cfg
 [galaxy]
 server = https://old-galaxy.ansible.com/
 
-#assible galaxu collections install
+#ansible galaxy collections install
 ansible-galaxy collection install google.cloud:1.2.0
 ansible-galaxy collection install community.google:1.0.0
+ansible-galaxy collection install community.general:3.8.1
 
 # tracerts
 brew install mtr
