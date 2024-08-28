@@ -79,6 +79,7 @@ pip3 install ansible-core==2.11.6
 pip3 install google-auth
 pip3 install requests
 ansible-galaxy collection install google.cloud:1.2.0
+ansible-galaxy collection install community.google:1.0.0
 
 # tracerts
 brew install mtr
