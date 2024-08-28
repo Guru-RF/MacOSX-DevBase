@@ -76,6 +76,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # ansible stuff
 pip3 install ansible-core==2.11.6
+pip3 install apache_libcloud==3.3.1
 pip3 install google-auth
 pip3 install requests
 ansible-galaxy collection install google.cloud:1.2.0
