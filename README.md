@@ -47,7 +47,7 @@ rustup-init
 
 cargo install exa
 
-brew install cowsay-org/cowsay/cowsay-apj
+brew install cowsay
 
 brew install coreutils
 
