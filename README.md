@@ -150,6 +150,9 @@ brew install zsh-completions
 # kubectl tools goole
 gcloud components install kubectl
 
+#openssl
+brew install openssl
+
 # Perl
 (install latest .zshrc)
 rm -fr ~/perl5
@@ -162,7 +165,9 @@ cpan-outdated | cpanm --notest
 cpanm JSON::XS
 cpanm Mojolicious
 cpanm Mojo::Redis
+LWP::Protocol::https
 cpanm Mojolicious::Plugin::Sentry
+
 cpanm Config::YAML
 cpanm Carton
 cpanm -f Perl::PrereqScanner::Lite
