@@ -180,6 +180,8 @@ cpanm Class::Refresh
 cpanm Compiler::Lexer
 cpanm Hash::SafeKeys
 cpanm Perl::LanguageServer
+export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/opt/openssl/lib/
+cpanm -n Redis::Fast
 
 echo ".DS_Store" > ~/.gitignore
 echo ".vscode" > ~/.gitignore
