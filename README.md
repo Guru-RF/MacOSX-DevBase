@@ -4,10 +4,9 @@ git config --global http.postBuffer 157286400
 
 nieuwe git ... gebruik git fetch; git merge idpv git pull (of zet rebase merge)
 
-install vcode
+install vscode
 install platformio in vscode
 install https://karabiner-elements.pqrs.org/ (map shift-ESC to tilde)
-https://ke-complex-modifications.pqrs.org/?q=Remap%20R_Shift%2BESC%20to%20Tilde%20rules
 
 install iterm2
 make iterm default term
@@ -49,7 +48,7 @@ rustup-init
 
 cargo install exa
 
-brew install cowsay-org/cowsay/cowsay-apj
+brew install cowsay
 
 brew install coreutils
 
@@ -152,6 +151,9 @@ brew install zsh-completions
 # kubectl tools goole
 gcloud components install kubectl
 
+#openssl
+brew install openssl
+
 # Perl
 (install latest .zshrc)
 rm -fr ~/perl5
@@ -164,7 +166,9 @@ cpan-outdated | cpanm --notest
 cpanm JSON::XS
 cpanm Mojolicious
 cpanm Mojo::Redis
+LWP::Protocol::https
 cpanm Mojolicious::Plugin::Sentry
+
 cpanm Config::YAML
 cpanm Carton
 cpanm -f Perl::PrereqScanner::Lite
@@ -177,6 +181,8 @@ cpanm Class::Refresh
 cpanm Compiler::Lexer
 cpanm Hash::SafeKeys
 cpanm Perl::LanguageServer
+export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/opt/openssl/lib/
+cpanm -n Redis::Fast
 
 echo ".DS_Store" > ~/.gitignore
 echo ".vscode" > ~/.gitignore
