@@ -1,5 +1,6 @@
 git config --global user.name "First Last" (uw naam invulle)
 git config --global user.email "ikke@mijndomain.com"
+git config --global http.postBuffer 157286400
 
 nieuwe git ... gebruik git fetch; git merge idpv git pull (of zet rebase merge)
 
