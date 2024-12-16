@@ -184,6 +184,10 @@ cpanm Perl::LanguageServer
 export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/opt/openssl/lib/
 cpanm -n Redis::Fast
 
+export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/Cellar/libpng/1.6.44/lib/
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:/opt/homebrew/Cellar/libpng/1.6.44/include/
+cpanm Imager::File::PNG
+
 echo ".DS_Store" > ~/.gitignore
 echo ".vscode" > ~/.gitignore
 
