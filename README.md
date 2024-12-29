@@ -189,7 +189,7 @@ export C_INCLUDE_PATH=$C_INCLUDE_PATH:/opt/homebrew/Cellar/libpng/1.6.44/include
 cpanm Imager::File::PNG
 
 echo ".DS_Store" > ~/.gitignore
-echo ".vscode" > ~/.gitignore
+echo ".vscode" >> ~/.gitignore
 
 git config --global core.excludesFile '~/.gitignore'
 
