@@ -90,6 +90,9 @@ server = https://old-galaxy.ansible.com/
 ansible-galaxy collection install google.cloud:1.2.0
 ansible-galaxy collection install community.google:1.0.0
 ansible-galaxy collection install community.general:3.8.1
+#ansible for gcp ops agent
+ansible-galaxy collection install ansible.windows
+ansible-galaxy role install googlecloudplatform.google_cloud_ops_agents
 
 # tracerts
 brew install mtr
