@@ -14,7 +14,7 @@ install iterm integrations
 
 <https://www.python.org/downloads/>>
 
-install python3.11.9 (not 12!!!! it brakes ansible)
+install latest python3
 install certs and shell check
 
 install brew (https://brew.sh/)
@@ -75,6 +75,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
 # ansible stuff
+brew install python@3.11
+python3.11 -m venv ansible-env
+source ansible-env/bin/activate
+
 pip3 install ansible-core==2.11.6
 pip3 install apache_libcloud==3.3.1
 pip3 install google-auth
