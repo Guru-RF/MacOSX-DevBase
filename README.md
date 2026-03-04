@@ -202,8 +202,13 @@ git config --global core.excludesFile '~/.gitignore'
 
 brew install --cask macfuse
 
+security find-certificate -a -p /System/Library/Keychains/SystemRootCertificates.keychain \
+  /Library/Keychains/System.keychain > ~/.mac-ca.pem
 
-
+add this to the .zshrc
+export SSL_CERT_FILE="$HOME/.mac-ca.pem"
+export MOJO_CA_FILE="$HOME/.mac-ca.pem"     # optional, but nice for Mojolicious
+export PERL_LWP_SSL_CA_FILE="$HOME/.mac-ca.pem"  # optional, helps LWP too
 
 
 
