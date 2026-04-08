@@ -1,5 +1,13 @@
 # Mac Apps
 
+## LibreWolf
+
+```bash
+brew install --cask librewolf
+xattr -dr com.apple.quarantine /Applications/LibreWolf.app
+ln -s ~/Library/Application\ Support/Mozilla/NativeMessagingHosts ~/Library/Application\ Support/LibreWolf/NativeMessagingHosts
+```
+
 ## App Store
 
 | App | Link |
