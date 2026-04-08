@@ -5,6 +5,7 @@
 ```bash
 brew install --cask librewolf
 xattr -dr com.apple.quarantine /Applications/LibreWolf.app
+# now first start librewolf 
 ln -s ~/Library/Application\ Support/Mozilla/NativeMessagingHosts ~/Library/Application\ Support/LibreWolf/NativeMessagingHosts
 ```
 
