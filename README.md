@@ -282,6 +282,18 @@ security find-certificate -a -p \
 
 ---
 
+## Fix permissions
+
+```bash
+for file in $(compaudit); do
+  sudo chmod 755 $file
+  sudo chmod 755 $(dirname $file)
+  sudo chown $(whoami) $file
+done
+```
+
+---
+
 ## Perl
 
 Install latest `.zshrc`, then:
