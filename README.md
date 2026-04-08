@@ -270,6 +270,18 @@ gcloud components install kubectl
 
 ---
 
+## SSL Certificates
+
+Export system root certificates:
+
+```bash
+security find-certificate -a -p \
+  /System/Library/Keychains/SystemRootCertificates.keychain \
+  /Library/Keychains/System.keychain > ~/.mac-ca.pem
+```
+
+---
+
 ## Perl
 
 Install latest `.zshrc`, then:
@@ -340,16 +352,6 @@ brew install --cask macfuse
 ```
 
 ---
-
-## SSL Certificates
-
-Export system root certificates:
-
-```bash
-security find-certificate -a -p \
-  /System/Library/Keychains/SystemRootCertificates.keychain \
-  /Library/Keychains/System.keychain > ~/.mac-ca.pem
-```
 
 Add to `~/.zshrc`:
 
