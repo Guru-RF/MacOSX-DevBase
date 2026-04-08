@@ -27,13 +27,6 @@ git config --global http.postBuffer 157286400
 
 ---
 
-## Python (on 26.4 Tahoe this is the default, so new install is not nesc)
-
-- Install latest Python 3 from <https://www.python.org/downloads/>
-- Install certs and run shell check
-
----
-
 ## Homebrew
 
 Install [Homebrew](https://brew.sh/):
@@ -273,14 +266,6 @@ brew install zsh-completions
 
 ```bash
 gcloud components install kubectl
-```
-
----
-
-## OpenSSL
-
-```bash
-brew install openssl
 ```
 
 ---
