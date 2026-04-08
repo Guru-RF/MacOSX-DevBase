@@ -49,8 +49,6 @@ Install [Homebrew](https://brew.sh/):
 Install Liquidprompt via git (powerline_full theme):
 
 ```bash
-mkdir -p ~/Git
-cd ~/Git
 git clone https://github.com/liquidprompt/liquidprompt.git ~/liquidprompt
 ```
 
@@ -66,8 +64,8 @@ Add to `~/.zshrc`:
 ### Powerline Fonts
 
 ```bash
-mkdir -p ~/Git
-cd ~/Git
+mkdir -p ~/Git/generic
+cd ~/Git/generic
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts && ./install.sh
 ```
