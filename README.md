@@ -108,7 +108,7 @@ brew install wget
 ## Google Cloud SDK
 
 ```bash
-wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-462.0.1-darwin-arm.tar.gz
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-darwin-arm.tar.gz
 # Extract in user home directory, then:
 ./google-cloud-sdk/install.sh
 exec zsh
