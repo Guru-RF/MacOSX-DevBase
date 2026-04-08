@@ -111,6 +111,7 @@ brew install wget
 wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-darwin-arm.tar.gz
 # Extract in user home directory, then:
 ./google-cloud-sdk/install.sh
+rm google-cloud-cli-darwin-arm.tar.gz
 exec zsh
 gcloud components update
 gcloud auth login
