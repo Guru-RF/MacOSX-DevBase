@@ -365,6 +365,14 @@ brew install --cask macfuse
 
 ---
 
+## dockdoor
+
+```bash
+brew install --cask dockdoor
+```
+
+---
+
 Add to `~/.zshrc`:
 
 ```bash
