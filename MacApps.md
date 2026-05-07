@@ -39,15 +39,20 @@ ln -s ~/Library/Application\ Support/Mozilla/NativeMessagingHosts ~/Library/Appl
 | Claude | [claude.com](https://claude.com/download) |
 | CleanMyMac X | [macpaw.com](https://macpaw.com/download/cleanmymac) |
 | Elgato Stream Deck | [elgato.com](https://www.elgato.com/us/en/s/downloads) |
+| Folder Peek | [sindresorhus.com](https://sindresorhus.com/folder-peek) |
 | Google Drive | [google.com](https://www.google.com/drive/download/) |
+| Hyperkey | [hyperkey.app](https://hyperkey.app) |
 | iTerm2 | [iterm2.com](https://iterm2.com/downloads.html) |
 | Karabiner-Elements | [karabiner-elements.pqrs.org](https://karabiner-elements.pqrs.org/) |
 | Keka | [keka.io](https://www.keka.io/en/) |
 | Keychron Engine | [keychron.com](https://www.keychron.com/pages/how-to-install-the-keychron-engine-software-on-macos) |
+| Mimestream | [mimestream.com](https://mimestream.com) |
 | Native Access | [native-instruments.com](https://www.native-instruments.com/en/specials/native-access/) |
 | OmniGraffle | [omnigroup.com](https://www.omnigroup.com/download/) |
 | Parallels Desktop | [parallels.com](https://www.parallels.com/products/desktop/download/) |
+| Parcel | [parcelapp.net](https://parcelapp.net) |
 | Raspberry Pi Imager | [raspberrypi.com](https://www.raspberrypi.com/software/) |
+| The Boring Name | [theboring.name](https://theboring.name) |
 | Visual Studio Code | [code.visualstudio.com](https://code.visualstudio.com/download) |
 
 ## GitHub
