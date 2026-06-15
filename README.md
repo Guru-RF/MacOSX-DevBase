@@ -262,6 +262,28 @@ brew install zsh-completions
 
 ---
 
+## Brew Stats
+
+```bash
+# Count installed formulae / casks
+brew list --formula | wc -l
+brew list --cask | wc -l
+
+# Packages you explicitly asked for (not pulled in as dependencies)
+brew leaves --installed-on-request
+
+# Full dependency tree of everything installed
+brew deps --tree --installed
+
+# Disk space used by Homebrew
+du -sh "$(brew --prefix)"
+
+# What's outdated
+brew outdated
+```
+
+---
+
 ## kubectl
 
 ```bash
