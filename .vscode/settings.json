@@ -1,0 +1,19 @@
+{
+  // Use Zellij as the integrated terminal for this project.
+  // It attaches to (or creates) a session named "macosx-devbase", so panes,
+  // tabs, cwd and scrollback are restored every time the terminal is (re)opened.
+  // Zellij serializes/resurrects sessions, giving a persistent "saved" session
+  // per project.
+  "terminal.integrated.profiles.osx": {
+    "zellij": {
+      // First existing path wins (Apple Silicon, Intel, then PATH fallback).
+      "path": ["/opt/homebrew/bin/zellij", "/usr/local/bin/zellij", "zellij"],
+      "args": ["attach", "--create", "macosx-devbase"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zellij",
+
+  // macOS has no Alt key. Make Option send Alt/Meta inside the integrated
+  // terminal so Zellij's default Alt-based bindings work.
+  "terminal.integrated.macOptionIsMeta": true
+}

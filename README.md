@@ -387,14 +387,6 @@ brew install --cask macfuse
 
 ---
 
-## dockdoor
-
-```bash
-brew install --cask dockdoor
-```
-
----
-
 Add to `~/.zshrc`:
 
 ```bash
@@ -402,3 +394,37 @@ export SSL_CERT_FILE="$HOME/.mac-ca.pem"
 export MOJO_CA_FILE="$HOME/.mac-ca.pem"           # optional, nice for Mojolicious
 export PERL_LWP_SSL_CA_FILE="$HOME/.mac-ca.pem"   # optional, helps LWP too
 ```
+
+---
+
+## zellij
+
+Install with Homebrew (puts `zellij` on `PATH`, needed for the VS Code terminal below):
+
+```bash
+brew install zellij
+```
+
+Or run it once without installing:
+
+```bash
+bash <(curl -L https://zellij.dev/launch)
+```
+
+Set the Solarized Dark theme in `~/.config/zellij/config.kdl`:
+
+```kdl
+theme "solarized-dark"
+```
+
+On macOS there is no `Alt` key — Zellij's default `Alt`-based bindings (e.g. pane/tab navigation) won't fire until you make your terminal send `Option` as `Alt`/Meta:
+
+- **iTerm2:** Settings → Profiles → Keys → set *Left Option key* to **Esc+** (the `Esc+` option, **not** `Normal` or `Meta`). This makes `Option` send the `Alt` sequences, so the default `Alt` bindings work as-is.
+- **Ghostty:** add `macos-option-as-alt = true` to `~/.config/ghostty/config`
+- **Terminal.app:** Settings → Profiles → Keyboard → enable *Use Option as Meta key*
+
+The `Ctrl`-based bindings work out of the box; only the `Alt` ones need this.
+
+### VS Code integration
+
+Zellij is wired in as the default integrated terminal for this project, with a persistent per-project session. See [VSCODE.md](VSCODE.md) for the setup and details.
