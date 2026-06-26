@@ -1,0 +1,139 @@
+// Solarized Dark + Powerline accents
+// ------------------------------------------------------------------
+// Keeps the Solarized Dark base (so Zellij stays aligned with the VS Code
+// "Better Solarized Dark Italics" theme) but recolours the status bar to match
+// the liquidprompt *powerline* prompt:
+//   - status-bar labels become muted Solarized grey instead of bright white
+//     (kills the "overwhelming white" bottom row)
+//   - the active mode / selected ribbon uses powerline-orange (the same accent
+//     as the prompt's host segment)
+//   - inactive ribbons use the powerline path grey
+//
+// Solarized palette (RGB):
+//   base03 0 43 54   base02 7 54 66    base01 88 110 117  base00 101 123 131
+//   base0 131 148 150 base1 147 161 161 base2 238 232 213  base3 253 246 227
+//   yellow 181 137 0  orange 203 75 22  red 220 50 47      magenta 211 54 130
+//   violet 108 113 196 blue 38 139 210  cyan 42 161 152    green 133 153 0
+themes {
+    solarized-powerline {
+        // Plain UI text + the status-bar fill. base = muted grey (was white).
+        text_unselected {
+            base 131 148 150        // base0  -> soft grey labels, not white
+            background 0 43 54       // base03 -> dark bar background
+            emphasis_0 203 75 22     // orange (powerline accent)
+            emphasis_1 38 139 210    // blue
+            emphasis_2 42 161 152    // cyan
+            emphasis_3 108 113 196   // violet
+        }
+        text_selected {
+            base 147 161 161         // base1
+            background 7 54 66       // base02
+            emphasis_0 203 75 22
+            emphasis_1 38 139 210
+            emphasis_2 42 161 152
+            emphasis_3 108 113 196
+        }
+        // Active mode ribbon -> powerline orange with dark text.
+        ribbon_selected {
+            base 0 43 54             // base03 (dark text on orange)
+            background 203 75 22     // orange = powerline host colour
+            emphasis_0 0 43 54
+            emphasis_1 38 139 210
+            emphasis_2 211 54 130
+            emphasis_3 181 137 0
+        }
+        // Inactive ribbons -> powerline path grey, subtle.
+        ribbon_unselected {
+            base 147 161 161         // base1
+            background 88 110 117    // base01 = powerline path grey
+            emphasis_0 203 75 22
+            emphasis_1 0 43 54
+            emphasis_2 211 54 130
+            emphasis_3 38 139 210
+        }
+        table_title {
+            base 133 153 0           // green
+            background 0 43 54
+            emphasis_0 203 75 22
+            emphasis_1 38 139 210
+            emphasis_2 42 161 152
+            emphasis_3 108 113 196
+        }
+        table_cell_unselected {
+            base 131 148 150
+            background 0 43 54
+            emphasis_0 203 75 22
+            emphasis_1 38 139 210
+            emphasis_2 42 161 152
+            emphasis_3 108 113 196
+        }
+        table_cell_selected {
+            base 147 161 161
+            background 7 54 66
+            emphasis_0 203 75 22
+            emphasis_1 38 139 210
+            emphasis_2 42 161 152
+            emphasis_3 108 113 196
+        }
+        list_unselected {
+            base 131 148 150
+            background 0 43 54
+            emphasis_0 203 75 22
+            emphasis_1 38 139 210
+            emphasis_2 42 161 152
+            emphasis_3 108 113 196
+        }
+        list_selected {
+            base 147 161 161
+            background 7 54 66
+            emphasis_0 203 75 22
+            emphasis_1 38 139 210
+            emphasis_2 42 161 152
+            emphasis_3 108 113 196
+        }
+        frame_selected {
+            base 42 161 152          // cyan
+            background 0 43 54
+            emphasis_0 203 75 22
+            emphasis_1 38 139 210
+            emphasis_2 147 161 161
+            emphasis_3 108 113 196
+        }
+        frame_highlight {
+            base 203 75 22           // orange
+            background 0 43 54
+            emphasis_0 203 75 22
+            emphasis_1 203 75 22
+            emphasis_2 203 75 22
+            emphasis_3 203 75 22
+        }
+        exit_code_success {
+            base 133 153 0           // green
+            background 0 43 54
+            emphasis_0 42 161 152
+            emphasis_1 38 139 210
+            emphasis_2 147 161 161
+            emphasis_3 108 113 196
+        }
+        exit_code_error {
+            base 220 50 47           // red
+            background 0 43 54
+            emphasis_0 181 137 0
+            emphasis_1 38 139 210
+            emphasis_2 211 54 130
+            emphasis_3 108 113 196
+        }
+        multiplayer_user_colors {
+            player_1 203 75 22
+            player_2 38 139 210
+            player_3 42 161 152
+            player_4 211 54 130
+            player_5 108 113 196
+            player_6 181 137 0
+            player_7 133 153 0
+            player_8 147 161 161
+            player_9 220 50 47
+            player_10 101 123 131
+        }
+    }
+}

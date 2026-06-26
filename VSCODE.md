@@ -36,6 +36,26 @@ brew install zellij
 
 > `.vscode` is excluded by the global gitignore on this machine, so the file was force-added (`git add -f .vscode/settings.json`). Once tracked, Git follows it normally.
 
+### Using Zellij for every project (global default)
+
+The settings above apply only to this project. To make Zellij the default integrated terminal for **every** project, add the same keys to your user `settings.json` (Cmd+Shift+P → *Preferences: Open User Settings (JSON)*), using a per-folder session name so each project gets its own persistent session:
+
+```json
+{
+  "terminal.integrated.profiles.osx": {
+    "zellij": {
+      "path": ["/opt/homebrew/bin/zellij", "/usr/local/bin/zellij", "zellij"],
+      "args": ["attach", "--create", "vscode-${workspaceFolderBasename}"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zellij",
+  "terminal.integrated.macOptionIsMeta": true
+}
+```
+
+- `${workspaceFolderBasename}` expands to the open folder's name, so a project in `~/Git/foo` attaches to a `vscode-foo` session — each project stays isolated and persistent.
+- This project's committed [.vscode/settings.json](.vscode/settings.json) overrides the `zellij` profile with a fixed `macosx-devbase` session name, so it takes precedence here while every other project falls back to the global `vscode-<folder>` profile.
+
 ### Persistent ("saved") session
 
 Zellij serializes and resurrects sessions. In `~/.config/zellij/config.kdl`:
@@ -44,6 +64,34 @@ Zellij serializes and resurrects sessions. In `~/.config/zellij/config.kdl`:
 - `serialize_pane_viewport true` is set so scrollback content is restored too.
 
 Reopen VS Code (or reload the window) and the terminal reattaches to `macosx-devbase` exactly as you left it.
+
+### Theme — Solarized Dark + Powerline
+
+The terminal uses a custom theme, [dotconfig/zellij/themes/solarized-powerline.kdl](dotconfig/zellij/themes/solarized-powerline.kdl), so Zellij's own chrome lines up with the rest of the setup:
+
+- **Base palette stays Solarized Dark** — matches the VS Code *Better Solarized Dark Italics* color theme, so the editor and terminal share one palette.
+- **Status bar adopts the Liquidprompt powerline colours** — the bright white default bottom bar is the main thing this fixes. The plain status-bar fill/label text (e.g. the session name) is muted Solarized grey (`base0` `#839496`); the mode/keybinding ribbons (`LOCK`, `PANE`, `TAB`, …) render as ribbons — the active one is dark `base03` (`#002b36`) text on powerline **orange** (`#cb4b16`, the same accent as the prompt's host segment), and inactive ones are `base1` (`#93a1a1`) on the powerline path **grey** `base01` (`#586e75`); the bar background is dark `base03` (`#002b36`).
+
+Install and select it:
+
+```bash
+mkdir -p ~/.config/zellij/themes
+cp dotconfig/zellij/themes/solarized-powerline.kdl ~/.config/zellij/themes/
+```
+
+```kdl
+// ~/.config/zellij/config.kdl
+theme "solarized-powerline"
+```
+
+Zellij reads the theme only when a session is **created**, so a running `macosx-devbase` keeps the old colours until you recreate it:
+
+```bash
+# in the terminal: detach with Ctrl o then d, then
+zellij kill-session macosx-devbase
+```
+
+Reopen the VS Code terminal (Cmd+Shift+P → *Terminal: Kill the Active Terminal Instance*, then open a new one). It runs `attach --create` and resurrects the session — panes, cwd and scrollback restored — now with the new bar colours. To preview without touching your main session, run `zellij attach -c preview` in any terminal; detach with `Ctrl o` then `d`, and remove it with `zellij delete-session preview -f` (the `-f` is required because the detached session is still active).
 
 ### Usage notes
 
