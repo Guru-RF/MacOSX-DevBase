@@ -112,16 +112,6 @@ gcloud auth login
 
 ---
 
-## tmux
-
-```bash
-brew install tmux
-brew install tpm
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
----
-
 ## Ansible
 
 ```bash
@@ -411,11 +401,24 @@ Or run it once without installing:
 bash <(curl -L https://zellij.dev/launch)
 ```
 
-Set the Solarized Dark theme in `~/.config/zellij/config.kdl`:
+### Theme — Solarized Dark + Powerline
+
+This repo ships a custom Zellij theme, [dotconfig/zellij/themes/solarized-powerline.kdl](dotconfig/zellij/themes/solarized-powerline.kdl), that keeps the Solarized Dark base (so it matches the VS Code *Better Solarized Dark Italics* theme and the iTerm2 Solarized Dark palette above) while recolouring the status bar to match the Liquidprompt **powerline** prompt — the active mode ribbon uses powerline orange, inactive ribbons use the powerline path grey, and the status-bar text is muted Solarized grey instead of the default glaring white.
+
+Install it (Zellij auto-loads `~/.config/zellij/themes/*.kdl`):
+
+```bash
+mkdir -p ~/.config/zellij/themes
+cp dotconfig/zellij/themes/solarized-powerline.kdl ~/.config/zellij/themes/
+```
+
+Then select it in `~/.config/zellij/config.kdl`:
 
 ```kdl
-theme "solarized-dark"
+theme "solarized-powerline"
 ```
+
+> Zellij reads the theme when a session is **created**. To apply it to an already-running session, recreate it: detach (`Ctrl o` then `d`), `zellij kill-session <name>`, then reattach — session serialization restores your panes and cwd. See [VSCODE.md](VSCODE.md) for details.
 
 On macOS there is no `Alt` key — Zellij's default `Alt`-based bindings (e.g. pane/tab navigation) won't fire until you make your terminal send `Option` as `Alt`/Meta:
 
@@ -427,4 +430,4 @@ The `Ctrl`-based bindings work out of the box; only the `Alt` ones need this.
 
 ### VS Code integration
 
-Zellij is wired in as the default integrated terminal for this project, with a persistent per-project session. See [VSCODE.md](VSCODE.md) for the setup and details.
+Zellij is wired in as the default integrated terminal for this project, with a persistent per-project session — and can be made the default for every project too. See [VSCODE.md](VSCODE.md) for both the project and global setup.
