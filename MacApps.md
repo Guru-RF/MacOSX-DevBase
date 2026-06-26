@@ -1,14 +1,5 @@
 # Mac Apps
 
-## LibreWolf
-
-```bash
-brew install --cask librewolf
-xattr -dr com.apple.quarantine /Applications/LibreWolf.app
-# now first start librewolf 
-ln -s ~/Library/Application\ Support/Mozilla/NativeMessagingHosts ~/Library/Application\ Support/LibreWolf/NativeMessagingHosts
-```
-
 ## App Store
 
 | App | Link |
@@ -38,7 +29,6 @@ ln -s ~/Library/Application\ Support/Mozilla/NativeMessagingHosts ~/Library/Appl
 | ChatGPT | [chatgpt.com](https://chatgpt.com/download) |
 | Claude | [claude.com](https://claude.com/download) |
 | CleanMyMac X | [macpaw.com](https://macpaw.com/download/cleanmymac) |
-| Elgato Stream Deck | [elgato.com](https://www.elgato.com/us/en/s/downloads) |
 | Folder Peek | [sindresorhus.com](https://sindresorhus.com/folder-peek) |
 | Google Drive | [google.com](https://www.google.com/drive/download/) |
 | Hyperkey | [hyperkey.app](https://hyperkey.app) |
