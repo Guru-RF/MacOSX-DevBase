@@ -272,6 +272,19 @@ du -sh "$(brew --prefix)"
 brew outdated
 ```
 
+### Snapshot — 2026-06-27
+
+| Metric | Value |
+| --- | --- |
+| Formulae installed | 319 |
+| Casks installed | 8 |
+| Explicitly requested (`brew leaves --installed-on-request`) | 57 |
+| Outdated packages | 137 |
+| Disk used (`/opt/homebrew`) | 7.8 GB |
+| Homebrew version | 6.0.4 |
+
+> Captured on Apple Silicon (`/opt/homebrew`). Regenerate any time with the commands above.
+
 ---
 
 ## kubectl
