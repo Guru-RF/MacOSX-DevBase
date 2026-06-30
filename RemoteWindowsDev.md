@@ -7,7 +7,7 @@ VS Code on the Mac.
 
 ```
 ┌─────────────┐   RDP (Windows App)  ┌──────────────────────────┐
-│             │ ───────────────────► │  Windows host "winhost" │
+│             │ ───────────────────► │  Windows host "winhost"  │
 │   macOS     │                      │  - OpenSSH Server (:22)  │
 │  VS Code    │   SSH (Remote-SSH)   │  - .NET SDK / dotnet     │
 │  Windows App│ ───────────────────► │  - VS Code (remote svr)  │
@@ -15,7 +15,10 @@ VS Code on the Mac.
 ```
 
 > All Windows commands below are PowerShell, run **as Administrator** unless
-> noted. Reconstructed from the `WINHOST` setup history.
+> noted.
+>
+> **Placeholders:** swap in your own values for `devuser` (Windows user),
+> `winhost` (machine name), `your-org` (GitHub org) and `ExampleApp` (project).
 
 ---
 
@@ -175,11 +178,11 @@ Rename-Computer -NewName "winhost" -Restart
 
 ```powershell
 cd ~
-mkdir Git\Guru-RF
-cd Git\Guru-RF
+mkdir Git\your-org
+cd Git\your-org
 
-git clone git@github.com:Guru-RF/ExampleApp-Windows.git
-git clone git@github.com:Guru-RF/ExampleApp-OSX.git
+git clone git@github.com:your-org/ExampleApp-Windows.git
+git clone git@github.com:your-org/ExampleApp-OSX.git
 
 code .\ExampleApp-Windows\
 ```
@@ -187,7 +190,7 @@ code .\ExampleApp-Windows\
 ### Run / package
 
 ```powershell
-cd ~\Git\Guru-RF\ExampleApp-Windows
+cd ~\Git\your-org\ExampleApp-Windows
 
 # Run the app
 dotnet run --project src\ExampleApp.App
@@ -210,14 +213,14 @@ On the **Mac**, add the host to `~/.ssh/config`:
 
 ```sshconfig
 Host winhost
-    HostName winhost.local          # or the host's IP / WireGuard address
+    HostName winhost.local           # or the host's IP / WireGuard address
     User devuser
 ```
 
 Then in VS Code on the Mac:
 
 1. **Cmd-Shift-P → Remote-SSH: Connect to Host… → `winhost`**
-2. Open `~/Git/Guru-RF/ExampleApp-Windows` on the remote.
+2. Open `~/Git/your-org/ExampleApp-Windows` on the remote.
 3. Let the C# Dev Kit install into the remote VS Code server, then `dotnet run`
    from the integrated terminal — all executing on Windows, edited from the Mac.
 
