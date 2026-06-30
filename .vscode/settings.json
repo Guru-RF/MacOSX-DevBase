@@ -8,7 +8,12 @@
     "zellij": {
       // First existing path wins (Apple Silicon, Intel, then PATH fallback).
       "path": ["/opt/homebrew/bin/zellij", "/usr/local/bin/zellij", "zellij"],
-      "args": ["attach", "--create", "macosx-devbase"]
+      "args": ["attach", "--create", "macosx-devbase"],
+      // Short socket dir: macOS caps the Unix-domain socket path at ~103 bytes,
+      // and the default lives under the long $TMPDIR (/var/folders/...). A long
+      // "vscode-<folder>" session name overflows it and the terminal fails to
+      // launch with "exit code 1". /tmp/zellij keeps the path well under the cap.
+      "env": { "ZELLIJ_SOCKET_DIR": "/tmp/zellij" }
     }
   },
   "terminal.integrated.defaultProfile.osx": "zellij",

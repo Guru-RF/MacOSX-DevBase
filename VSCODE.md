@@ -21,7 +21,8 @@ brew install zellij
   "terminal.integrated.profiles.osx": {
     "zellij": {
       "path": ["/opt/homebrew/bin/zellij", "/usr/local/bin/zellij", "zellij"],
-      "args": ["attach", "--create", "macosx-devbase"]
+      "args": ["attach", "--create", "macosx-devbase"],
+      "env": { "ZELLIJ_SOCKET_DIR": "/tmp/zellij" }
     }
   },
   "terminal.integrated.defaultProfile.osx": "zellij",
@@ -30,6 +31,7 @@ brew install zellij
 ```
 
 - `defaultProfile.osx` makes Zellij the terminal that opens by default.
+- `env.ZELLIJ_SOCKET_DIR` points Zellij at a short socket directory. macOS caps the Unix-domain IPC socket path at ~103 bytes; the default sits under the long `$TMPDIR` (`/var/folders/…`), so a long session name overflows the limit and the terminal fails to launch with `exit code 1`. `/tmp/zellij` keeps every session name well under the cap.
 - `attach --create macosx-devbase` attaches to a session named `macosx-devbase`, creating it the first time. The name is fixed per project, so you always return to the same workspace.
 - `path` is a list of fallbacks — the first one that exists is used (Apple Silicon Homebrew, Intel Homebrew, then a bare `PATH` lookup).
 - `macOptionIsMeta` makes the `Option` key send `Alt`/Meta inside the terminal — see [macOS keybindings](#macos-keybindings).
@@ -45,7 +47,8 @@ The settings above apply only to this project. To make Zellij the default integr
   "terminal.integrated.profiles.osx": {
     "zellij": {
       "path": ["/opt/homebrew/bin/zellij", "/usr/local/bin/zellij", "zellij"],
-      "args": ["attach", "--create", "vscode-${workspaceFolderBasename}"]
+      "args": ["attach", "--create", "vscode-${workspaceFolderBasename}"],
+      "env": { "ZELLIJ_SOCKET_DIR": "/tmp/zellij" }
     }
   },
   "terminal.integrated.defaultProfile.osx": "zellij",
@@ -54,6 +57,7 @@ The settings above apply only to this project. To make Zellij the default integr
 ```
 
 - `${workspaceFolderBasename}` expands to the open folder's name, so a project in `~/Git/foo` attaches to a `vscode-foo` session — each project stays isolated and persistent.
+- `env.ZELLIJ_SOCKET_DIR=/tmp/zellij` is **required** here: with the default `$TMPDIR` socket dir, a long folder name (e.g. `Analog-HotSPOT-SVXLink` → `vscode-Analog-HotSPOT-SVXLink`) pushes the IPC socket path past the macOS ~103-byte limit and the terminal fails to launch with `exit code 1`. The short dir fixes it for every project.
 - This project's committed [.vscode/settings.json](.vscode/settings.json) overrides the `zellij` profile with a fixed `macosx-devbase` session name, so it takes precedence here while every other project falls back to the global `vscode-<folder>` profile.
 
 ### Persistent ("saved") session
