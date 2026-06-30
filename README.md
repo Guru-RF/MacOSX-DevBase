@@ -209,10 +209,29 @@ brew install terminal-notifier
 
 ## Neovim
 
+The config is tracked in this repo at [dotconfig/nvim/init.vim](dotconfig/nvim/init.vim)
+(Vimscript, [dein.vim](https://github.com/Shougo/dein.vim) plugin manager). Its dein
+paths use `expand('~')`, so it is portable across machines and usernames.
+
+Install Neovim + the dein plugin manager:
+
 ```bash
 brew install neovim
 pip3 install pynvim
 sh -c "$(wget -O- https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
+```
+
+Deploy the tracked config by **symlinking** it (so `git pull` on any station keeps
+every machine in sync — edit once, pull everywhere):
+
+```bash
+mkdir -p ~/.config/nvim
+ln -sf ~/Git/Guru-RF/MacOSX-DevBase/dotconfig/nvim/init.vim ~/.config/nvim/init.vim
+```
+
+Then install the plugins:
+
+```bash
 nvim +"call dein#update()" +qall
 ```
 
